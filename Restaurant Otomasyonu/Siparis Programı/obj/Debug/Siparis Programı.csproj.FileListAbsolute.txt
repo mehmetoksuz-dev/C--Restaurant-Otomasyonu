@@ -1,0 +1,66 @@
+C:\Users\CASPER\source\repos\Siparis Programı\bin\Debug\Siparis Programı.exe.config
+C:\Users\CASPER\source\repos\Siparis Programı\bin\Debug\Siparis Programı.exe
+C:\Users\CASPER\source\repos\Siparis Programı\bin\Debug\Siparis Programı.pdb
+C:\Users\CASPER\source\repos\Siparis Programı\obj\Debug\Siparis Programı.csprojAssemblyReference.cache
+C:\Users\CASPER\source\repos\Siparis Programı\obj\Debug\Siparis_Programı.Form1.resources
+C:\Users\CASPER\source\repos\Siparis Programı\obj\Debug\Siparis_Programı.Properties.Resources.resources
+C:\Users\CASPER\source\repos\Siparis Programı\obj\Debug\Siparis Programı.csproj.GenerateResource.cache
+C:\Users\CASPER\source\repos\Siparis Programı\obj\Debug\Siparis Programı.csproj.CoreCompileInputs.cache
+C:\Users\CASPER\source\repos\Siparis Programı\obj\Debug\Siparis Programı.exe
+C:\Users\CASPER\source\repos\Siparis Programı\obj\Debug\Siparis Programı.pdb
+C:\Users\CASPER\source\repos\Siparis Programı\obj\Debug\Siparis_Programı.menu.resources
+C:\Users\CASPER\source\repos\Siparis Programı\obj\Debug\Siparis_Programı.masalar.resources
+C:\Users\mehme\Desktop\Siparis Programı\bin\Debug\Siparis Programı.exe.config
+C:\Users\mehme\Desktop\Siparis Programı\bin\Debug\Siparis Programı.exe
+C:\Users\mehme\Desktop\Siparis Programı\bin\Debug\Siparis Programı.pdb
+C:\Users\mehme\Desktop\Siparis Programı\obj\Debug\Siparis Programı.csprojAssemblyReference.cache
+C:\Users\mehme\Desktop\Siparis Programı\obj\Debug\Siparis_Programı.Login.resources
+C:\Users\mehme\Desktop\Siparis Programı\obj\Debug\Siparis_Programı.Menuler.resources
+C:\Users\mehme\Desktop\Siparis Programı\obj\Debug\Siparis_Programı.Anasayfa.resources
+C:\Users\mehme\Desktop\Siparis Programı\obj\Debug\Siparis_Programı.Properties.Resources.resources
+C:\Users\mehme\Desktop\Siparis Programı\obj\Debug\Siparis Programı.csproj.GenerateResource.cache
+C:\Users\mehme\Desktop\Siparis Programı\obj\Debug\Siparis Programı.csproj.CoreCompileInputs.cache
+C:\Users\mehme\Desktop\Siparis Programı\obj\Debug\Siparis Programı.exe
+C:\Users\mehme\Desktop\Siparis Programı\obj\Debug\Siparis Programı.pdb
+C:\Users\mehme\Desktop\Siparis Programı\obj\Debug\Siparis_Programı.SiparisHazirla.resources
+C:\Users\CASPER\Desktop\Siparis Programı\bin\Debug\Siparis Programı.exe.config
+C:\Users\CASPER\Desktop\Siparis Programı\bin\Debug\Siparis Programı.exe
+C:\Users\CASPER\Desktop\Siparis Programı\bin\Debug\Siparis Programı.pdb
+C:\Users\CASPER\Desktop\Siparis Programı\obj\Debug\Siparis Programı.csprojAssemblyReference.cache
+C:\Users\CASPER\Desktop\Siparis Programı\obj\Debug\Siparis_Programı.Login.resources
+C:\Users\CASPER\Desktop\Siparis Programı\obj\Debug\Siparis_Programı.Menuler.resources
+C:\Users\CASPER\Desktop\Siparis Programı\obj\Debug\Siparis_Programı.Anasayfa.resources
+C:\Users\CASPER\Desktop\Siparis Programı\obj\Debug\Siparis_Programı.Properties.Resources.resources
+C:\Users\CASPER\Desktop\Siparis Programı\obj\Debug\Siparis_Programı.SiparisHazirla.resources
+C:\Users\CASPER\Desktop\Siparis Programı\obj\Debug\Siparis Programı.csproj.GenerateResource.cache
+C:\Users\CASPER\Desktop\Siparis Programı\obj\Debug\Siparis Programı.csproj.CoreCompileInputs.cache
+C:\Users\CASPER\Desktop\Siparis Programı\obj\Debug\Siparis Programı.exe
+C:\Users\CASPER\Desktop\Siparis Programı\obj\Debug\Siparis Programı.pdb
+C:\Users\mehme\Desktop\Siparis Programı (1)\Siparis Programı\bin\Debug\Siparis Programı.exe.config
+C:\Users\mehme\Desktop\Siparis Programı (1)\Siparis Programı\bin\Debug\Siparis Programı.exe
+C:\Users\mehme\Desktop\Siparis Programı (1)\Siparis Programı\bin\Debug\Siparis Programı.pdb
+C:\Users\mehme\Desktop\Siparis Programı (1)\Siparis Programı\obj\Debug\Siparis Programı.csprojAssemblyReference.cache
+C:\Users\mehme\Desktop\Siparis Programı (1)\Siparis Programı\obj\Debug\Siparis_Programı.Login.resources
+C:\Users\mehme\Desktop\Siparis Programı (1)\Siparis Programı\obj\Debug\Siparis_Programı.Menuler.resources
+C:\Users\mehme\Desktop\Siparis Programı (1)\Siparis Programı\obj\Debug\Siparis_Programı.Anasayfa.resources
+C:\Users\mehme\Desktop\Siparis Programı (1)\Siparis Programı\obj\Debug\Siparis_Programı.Properties.Resources.resources
+C:\Users\mehme\Desktop\Siparis Programı (1)\Siparis Programı\obj\Debug\Siparis_Programı.SiparisHazirla.resources
+C:\Users\mehme\Desktop\Siparis Programı (1)\Siparis Programı\obj\Debug\Siparis Programı.csproj.GenerateResource.cache
+C:\Users\mehme\Desktop\Siparis Programı (1)\Siparis Programı\obj\Debug\Siparis Programı.csproj.CoreCompileInputs.cache
+C:\Users\mehme\Desktop\Siparis Programı (1)\Siparis Programı\obj\Debug\Siparis Programı.exe
+C:\Users\mehme\Desktop\Siparis Programı (1)\Siparis Programı\obj\Debug\Siparis Programı.pdb
+C:\Users\mehme\Desktop\Siparis Programı (1)\Siparis Programı\obj\Debug\Siparis_Programı.Rezervasyon.resources
+C:\Users\mehme\Desktop\Restaurant Otomasyonu\Siparis Programı\bin\Debug\Siparis Programı.exe.config
+C:\Users\mehme\Desktop\Restaurant Otomasyonu\Siparis Programı\bin\Debug\Siparis Programı.exe
+C:\Users\mehme\Desktop\Restaurant Otomasyonu\Siparis Programı\bin\Debug\Siparis Programı.pdb
+C:\Users\mehme\Desktop\Restaurant Otomasyonu\Siparis Programı\obj\Debug\Siparis Programı.csprojAssemblyReference.cache
+C:\Users\mehme\Desktop\Restaurant Otomasyonu\Siparis Programı\obj\Debug\Siparis_Programı.Login.resources
+C:\Users\mehme\Desktop\Restaurant Otomasyonu\Siparis Programı\obj\Debug\Siparis_Programı.Menuler.resources
+C:\Users\mehme\Desktop\Restaurant Otomasyonu\Siparis Programı\obj\Debug\Siparis_Programı.Anasayfa.resources
+C:\Users\mehme\Desktop\Restaurant Otomasyonu\Siparis Programı\obj\Debug\Siparis_Programı.Properties.Resources.resources
+C:\Users\mehme\Desktop\Restaurant Otomasyonu\Siparis Programı\obj\Debug\Siparis_Programı.Rezervasyon.resources
+C:\Users\mehme\Desktop\Restaurant Otomasyonu\Siparis Programı\obj\Debug\Siparis_Programı.SiparisHazirla.resources
+C:\Users\mehme\Desktop\Restaurant Otomasyonu\Siparis Programı\obj\Debug\Siparis Programı.csproj.GenerateResource.cache
+C:\Users\mehme\Desktop\Restaurant Otomasyonu\Siparis Programı\obj\Debug\Siparis Programı.csproj.CoreCompileInputs.cache
+C:\Users\mehme\Desktop\Restaurant Otomasyonu\Siparis Programı\obj\Debug\Siparis Programı.exe
+C:\Users\mehme\Desktop\Restaurant Otomasyonu\Siparis Programı\obj\Debug\Siparis Programı.pdb
