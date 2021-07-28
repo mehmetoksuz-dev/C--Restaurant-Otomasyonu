@@ -43,24 +43,32 @@ namespace Siparis_Programı
             this.richTxtEkBilgi = new System.Windows.Forms.RichTextBox();
             this.label6 = new System.Windows.Forms.Label();
             this.btnTemizle = new System.Windows.Forms.Button();
-            this.listView1 = new System.Windows.Forms.ListView();
             this.label7 = new System.Windows.Forms.Label();
             this.label8 = new System.Windows.Forms.Label();
             this.btnMusteriEkle = new System.Windows.Forms.Button();
-            this.dataGridView1 = new System.Windows.Forms.DataGridView();
             this.txtAra = new System.Windows.Forms.TextBox();
             this.btnAra = new System.Windows.Forms.Button();
-            this.textBox2 = new System.Windows.Forms.TextBox();
+            this.txtIsım = new System.Windows.Forms.TextBox();
             this.btnOnayla = new System.Windows.Forms.Button();
             this.label9 = new System.Windows.Forms.Label();
             this.label10 = new System.Windows.Forms.Label();
-            ((System.ComponentModel.ISupportInitialize)(this.dataGridView1)).BeginInit();
+            this.dtSiparisMusteri = new System.Windows.Forms.DataGridView();
+            this.dataGridViewTextBoxColumn1 = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.dataGridViewTextBoxColumn2 = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.dataGridViewTextBoxColumn3 = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.dataGridViewTextBoxColumn4 = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.dataGridViewTextBoxColumn6 = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.richSiparisOzet = new System.Windows.Forms.RichTextBox();
+            ((System.ComponentModel.ISupportInitialize)(this.dtSiparisMusteri)).BeginInit();
             this.SuspendLayout();
             // 
             // cmbAnaYemek
             // 
             this.cmbAnaYemek.Font = new System.Drawing.Font("Century Gothic", 7.8F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(162)));
             this.cmbAnaYemek.FormattingEnabled = true;
+            this.cmbAnaYemek.Items.AddRange(new object[] {
+            "Dolma",
+            "Sarma"});
             this.cmbAnaYemek.Location = new System.Drawing.Point(121, 146);
             this.cmbAnaYemek.Name = "cmbAnaYemek";
             this.cmbAnaYemek.Size = new System.Drawing.Size(278, 25);
@@ -81,6 +89,9 @@ namespace Siparis_Programı
             // 
             this.cmbIcecek.Font = new System.Drawing.Font("Century Gothic", 7.8F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(162)));
             this.cmbIcecek.FormattingEnabled = true;
+            this.cmbIcecek.Items.AddRange(new object[] {
+            "Kola",
+            "Ayran"});
             this.cmbIcecek.Location = new System.Drawing.Point(121, 289);
             this.cmbIcecek.Name = "cmbIcecek";
             this.cmbIcecek.Size = new System.Drawing.Size(278, 25);
@@ -101,6 +112,9 @@ namespace Siparis_Programı
             // 
             this.cmbAperatifler.Font = new System.Drawing.Font("Century Gothic", 7.8F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(162)));
             this.cmbAperatifler.FormattingEnabled = true;
+            this.cmbAperatifler.Items.AddRange(new object[] {
+            "Cips",
+            "Patates"});
             this.cmbAperatifler.Location = new System.Drawing.Point(121, 194);
             this.cmbAperatifler.Name = "cmbAperatifler";
             this.cmbAperatifler.Size = new System.Drawing.Size(278, 25);
@@ -121,6 +135,9 @@ namespace Siparis_Programı
             // 
             this.cmbTatlilar.Font = new System.Drawing.Font("Century Gothic", 7.8F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(162)));
             this.cmbTatlilar.FormattingEnabled = true;
+            this.cmbTatlilar.Items.AddRange(new object[] {
+            "Künefe",
+            "Baklava"});
             this.cmbTatlilar.Location = new System.Drawing.Point(121, 243);
             this.cmbTatlilar.Name = "cmbTatlilar";
             this.cmbTatlilar.Size = new System.Drawing.Size(278, 25);
@@ -152,6 +169,9 @@ namespace Siparis_Programı
             // 
             this.cmbSiparisTuru.Font = new System.Drawing.Font("Century Gothic", 7.8F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(162)));
             this.cmbSiparisTuru.FormattingEnabled = true;
+            this.cmbSiparisTuru.Items.AddRange(new object[] {
+            "Normal Sipariş",
+            "Paket Servis"});
             this.cmbSiparisTuru.Location = new System.Drawing.Point(121, 100);
             this.cmbSiparisTuru.Name = "cmbSiparisTuru";
             this.cmbSiparisTuru.Size = new System.Drawing.Size(278, 25);
@@ -189,16 +209,6 @@ namespace Siparis_Programı
             this.btnTemizle.Text = "TEMİZLE";
             this.btnTemizle.UseVisualStyleBackColor = true;
             // 
-            // listView1
-            // 
-            this.listView1.Font = new System.Drawing.Font("Century Gothic", 7.8F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(162)));
-            this.listView1.HideSelection = false;
-            this.listView1.Location = new System.Drawing.Point(60, 468);
-            this.listView1.Name = "listView1";
-            this.listView1.Size = new System.Drawing.Size(347, 97);
-            this.listView1.TabIndex = 6;
-            this.listView1.UseCompatibleStateImageBehavior = false;
-            // 
             // label7
             // 
             this.label7.AutoSize = true;
@@ -215,7 +225,7 @@ namespace Siparis_Programı
             this.label8.AutoSize = true;
             this.label8.Font = new System.Drawing.Font("Century Gothic", 7.8F, System.Drawing.FontStyle.Bold);
             this.label8.ForeColor = System.Drawing.Color.White;
-            this.label8.Location = new System.Drawing.Point(588, 125);
+            this.label8.Location = new System.Drawing.Point(682, 83);
             this.label8.Name = "label8";
             this.label8.Size = new System.Drawing.Size(85, 17);
             this.label8.TabIndex = 1;
@@ -226,37 +236,28 @@ namespace Siparis_Programı
             this.btnMusteriEkle.Font = new System.Drawing.Font("Century Gothic", 7.8F, System.Drawing.FontStyle.Bold);
             this.btnMusteriEkle.Image = ((System.Drawing.Image)(resources.GetObject("btnMusteriEkle.Image")));
             this.btnMusteriEkle.ImageAlign = System.Drawing.ContentAlignment.MiddleLeft;
-            this.btnMusteriEkle.Location = new System.Drawing.Point(458, 481);
+            this.btnMusteriEkle.Location = new System.Drawing.Point(554, 609);
             this.btnMusteriEkle.Name = "btnMusteriEkle";
             this.btnMusteriEkle.Size = new System.Drawing.Size(338, 58);
             this.btnMusteriEkle.TabIndex = 5;
             this.btnMusteriEkle.Text = "Müşteri Ekle";
             this.btnMusteriEkle.UseVisualStyleBackColor = true;
             // 
-            // dataGridView1
-            // 
-            this.dataGridView1.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
-            this.dataGridView1.Location = new System.Drawing.Point(456, 155);
-            this.dataGridView1.Name = "dataGridView1";
-            this.dataGridView1.RowHeadersWidth = 51;
-            this.dataGridView1.RowTemplate.Height = 24;
-            this.dataGridView1.Size = new System.Drawing.Size(340, 137);
-            this.dataGridView1.TabIndex = 8;
-            // 
             // txtAra
             // 
             this.txtAra.Font = new System.Drawing.Font("Century Gothic", 7.8F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(162)));
-            this.txtAra.Location = new System.Drawing.Point(456, 340);
+            this.txtAra.Location = new System.Drawing.Point(552, 468);
             this.txtAra.Name = "txtAra";
             this.txtAra.Size = new System.Drawing.Size(340, 23);
             this.txtAra.TabIndex = 9;
+            this.txtAra.TextChanged += new System.EventHandler(this.txtAra_TextChanged);
             // 
             // btnAra
             // 
             this.btnAra.Font = new System.Drawing.Font("Century Gothic", 7.8F, System.Drawing.FontStyle.Bold);
             this.btnAra.Image = ((System.Drawing.Image)(resources.GetObject("btnAra.Image")));
             this.btnAra.ImageAlign = System.Drawing.ContentAlignment.MiddleLeft;
-            this.btnAra.Location = new System.Drawing.Point(456, 398);
+            this.btnAra.Location = new System.Drawing.Point(552, 526);
             this.btnAra.Name = "btnAra";
             this.btnAra.Size = new System.Drawing.Size(340, 58);
             this.btnAra.TabIndex = 5;
@@ -264,14 +265,14 @@ namespace Siparis_Programı
             this.btnAra.UseVisualStyleBackColor = true;
             this.btnAra.Click += new System.EventHandler(this.btnAra_Click);
             // 
-            // textBox2
+            // txtIsım
             // 
-            this.textBox2.Enabled = false;
-            this.textBox2.Font = new System.Drawing.Font("Century Gothic", 7.8F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(162)));
-            this.textBox2.Location = new System.Drawing.Point(57, 590);
-            this.textBox2.Name = "textBox2";
-            this.textBox2.Size = new System.Drawing.Size(350, 23);
-            this.textBox2.TabIndex = 10;
+            this.txtIsım.Enabled = false;
+            this.txtIsım.Font = new System.Drawing.Font("Century Gothic", 7.8F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(162)));
+            this.txtIsım.Location = new System.Drawing.Point(57, 590);
+            this.txtIsım.Name = "txtIsım";
+            this.txtIsım.Size = new System.Drawing.Size(350, 23);
+            this.txtIsım.TabIndex = 10;
             // 
             // btnOnayla
             // 
@@ -284,13 +285,14 @@ namespace Siparis_Programı
             this.btnOnayla.TabIndex = 11;
             this.btnOnayla.Text = "ONAYLA";
             this.btnOnayla.UseVisualStyleBackColor = true;
+            this.btnOnayla.Click += new System.EventHandler(this.btnOnayla_Click);
             // 
             // label9
             // 
             this.label9.AutoSize = true;
             this.label9.Font = new System.Drawing.Font("Century Gothic", 7.8F, System.Drawing.FontStyle.Bold);
             this.label9.ForeColor = System.Drawing.Color.White;
-            this.label9.Location = new System.Drawing.Point(455, 308);
+            this.label9.Location = new System.Drawing.Point(551, 436);
             this.label9.Name = "label9";
             this.label9.Size = new System.Drawing.Size(56, 17);
             this.label9.TabIndex = 12;
@@ -301,25 +303,89 @@ namespace Siparis_Programı
             this.label10.AutoSize = true;
             this.label10.Font = new System.Drawing.Font("Bahnschrift Condensed", 24F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.label10.ForeColor = System.Drawing.Color.White;
-            this.label10.Location = new System.Drawing.Point(244, 18);
+            this.label10.Location = new System.Drawing.Point(309, 9);
             this.label10.Name = "label10";
             this.label10.Size = new System.Drawing.Size(379, 48);
             this.label10.TabIndex = 13;
             this.label10.Text = "SİPARİŞ HAZIRLAMA EKRANI";
+            // 
+            // dtSiparisMusteri
+            // 
+            this.dtSiparisMusteri.AllowUserToAddRows = false;
+            this.dtSiparisMusteri.AutoSizeColumnsMode = System.Windows.Forms.DataGridViewAutoSizeColumnsMode.Fill;
+            this.dtSiparisMusteri.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
+            this.dtSiparisMusteri.Columns.AddRange(new System.Windows.Forms.DataGridViewColumn[] {
+            this.dataGridViewTextBoxColumn1,
+            this.dataGridViewTextBoxColumn2,
+            this.dataGridViewTextBoxColumn3,
+            this.dataGridViewTextBoxColumn4,
+            this.dataGridViewTextBoxColumn6});
+            this.dtSiparisMusteri.Location = new System.Drawing.Point(447, 100);
+            this.dtSiparisMusteri.Name = "dtSiparisMusteri";
+            this.dtSiparisMusteri.ReadOnly = true;
+            this.dtSiparisMusteri.RowHeadersWidth = 51;
+            this.dtSiparisMusteri.RowTemplate.Height = 24;
+            this.dtSiparisMusteri.Size = new System.Drawing.Size(526, 309);
+            this.dtSiparisMusteri.TabIndex = 55;
+            this.dtSiparisMusteri.CellDoubleClick += new System.Windows.Forms.DataGridViewCellEventHandler(this.dtSiparisMusteri_CellDoubleClick);
+            // 
+            // dataGridViewTextBoxColumn1
+            // 
+            this.dataGridViewTextBoxColumn1.HeaderText = "No";
+            this.dataGridViewTextBoxColumn1.MinimumWidth = 6;
+            this.dataGridViewTextBoxColumn1.Name = "dataGridViewTextBoxColumn1";
+            this.dataGridViewTextBoxColumn1.ReadOnly = true;
+            // 
+            // dataGridViewTextBoxColumn2
+            // 
+            this.dataGridViewTextBoxColumn2.HeaderText = "İsim";
+            this.dataGridViewTextBoxColumn2.MinimumWidth = 6;
+            this.dataGridViewTextBoxColumn2.Name = "dataGridViewTextBoxColumn2";
+            this.dataGridViewTextBoxColumn2.ReadOnly = true;
+            // 
+            // dataGridViewTextBoxColumn3
+            // 
+            this.dataGridViewTextBoxColumn3.HeaderText = "Soyisim";
+            this.dataGridViewTextBoxColumn3.MinimumWidth = 6;
+            this.dataGridViewTextBoxColumn3.Name = "dataGridViewTextBoxColumn3";
+            this.dataGridViewTextBoxColumn3.ReadOnly = true;
+            // 
+            // dataGridViewTextBoxColumn4
+            // 
+            this.dataGridViewTextBoxColumn4.HeaderText = "Telefon";
+            this.dataGridViewTextBoxColumn4.MinimumWidth = 6;
+            this.dataGridViewTextBoxColumn4.Name = "dataGridViewTextBoxColumn4";
+            this.dataGridViewTextBoxColumn4.ReadOnly = true;
+            // 
+            // dataGridViewTextBoxColumn6
+            // 
+            this.dataGridViewTextBoxColumn6.HeaderText = "Adres";
+            this.dataGridViewTextBoxColumn6.MinimumWidth = 6;
+            this.dataGridViewTextBoxColumn6.Name = "dataGridViewTextBoxColumn6";
+            this.dataGridViewTextBoxColumn6.ReadOnly = true;
+            // 
+            // richSiparisOzet
+            // 
+            this.richSiparisOzet.Font = new System.Drawing.Font("Century Gothic", 7.8F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(162)));
+            this.richSiparisOzet.Location = new System.Drawing.Point(60, 468);
+            this.richSiparisOzet.Name = "richSiparisOzet";
+            this.richSiparisOzet.Size = new System.Drawing.Size(339, 99);
+            this.richSiparisOzet.TabIndex = 56;
+            this.richSiparisOzet.Text = "";
             // 
             // SiparisHazirla
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(8F, 16F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(62)))), ((int)(((byte)(87)))), ((int)(((byte)(104)))));
-            this.ClientSize = new System.Drawing.Size(817, 730);
+            this.ClientSize = new System.Drawing.Size(985, 730);
+            this.Controls.Add(this.richSiparisOzet);
+            this.Controls.Add(this.dtSiparisMusteri);
             this.Controls.Add(this.label10);
             this.Controls.Add(this.label9);
             this.Controls.Add(this.btnOnayla);
-            this.Controls.Add(this.textBox2);
+            this.Controls.Add(this.txtIsım);
             this.Controls.Add(this.txtAra);
-            this.Controls.Add(this.dataGridView1);
-            this.Controls.Add(this.listView1);
             this.Controls.Add(this.btnTemizle);
             this.Controls.Add(this.btnAra);
             this.Controls.Add(this.btnMusteriEkle);
@@ -339,7 +405,8 @@ namespace Siparis_Programı
             this.Controls.Add(this.cmbAnaYemek);
             this.Name = "SiparisHazirla";
             this.Text = "SiparisHazirla";
-            ((System.ComponentModel.ISupportInitialize)(this.dataGridView1)).EndInit();
+            this.Load += new System.EventHandler(this.SiparisHazirla_Load);
+            ((System.ComponentModel.ISupportInitialize)(this.dtSiparisMusteri)).EndInit();
             this.ResumeLayout(false);
             this.PerformLayout();
 
@@ -360,16 +427,21 @@ namespace Siparis_Programı
         private System.Windows.Forms.RichTextBox richTxtEkBilgi;
         private System.Windows.Forms.Label label6;
         private System.Windows.Forms.Button btnTemizle;
-        private System.Windows.Forms.ListView listView1;
         private System.Windows.Forms.Label label7;
         private System.Windows.Forms.Label label8;
         private System.Windows.Forms.Button btnMusteriEkle;
-        private System.Windows.Forms.DataGridView dataGridView1;
         private System.Windows.Forms.TextBox txtAra;
         private System.Windows.Forms.Button btnAra;
-        private System.Windows.Forms.TextBox textBox2;
+        private System.Windows.Forms.TextBox txtIsım;
         private System.Windows.Forms.Button btnOnayla;
         private System.Windows.Forms.Label label9;
         private System.Windows.Forms.Label label10;
+        private System.Windows.Forms.DataGridView dtSiparisMusteri;
+        private System.Windows.Forms.DataGridViewTextBoxColumn dataGridViewTextBoxColumn1;
+        private System.Windows.Forms.DataGridViewTextBoxColumn dataGridViewTextBoxColumn2;
+        private System.Windows.Forms.DataGridViewTextBoxColumn dataGridViewTextBoxColumn3;
+        private System.Windows.Forms.DataGridViewTextBoxColumn dataGridViewTextBoxColumn4;
+        private System.Windows.Forms.DataGridViewTextBoxColumn dataGridViewTextBoxColumn6;
+        private System.Windows.Forms.RichTextBox richSiparisOzet;
     }
 }

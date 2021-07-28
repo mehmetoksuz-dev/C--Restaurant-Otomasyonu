@@ -64,3 +64,17 @@ C:\Users\mehme\Desktop\Restaurant Otomasyonu\Siparis Programı\obj\Debug\Siparis
 C:\Users\mehme\Desktop\Restaurant Otomasyonu\Siparis Programı\obj\Debug\Siparis Programı.csproj.CoreCompileInputs.cache
 C:\Users\mehme\Desktop\Restaurant Otomasyonu\Siparis Programı\obj\Debug\Siparis Programı.exe
 C:\Users\mehme\Desktop\Restaurant Otomasyonu\Siparis Programı\obj\Debug\Siparis Programı.pdb
+C:\Users\mehme\Documents\GitHub\C--Restaurant-Otomasyonu\Restaurant Otomasyonu\Siparis Programı\bin\Debug\Siparis Programı.exe.config
+C:\Users\mehme\Documents\GitHub\C--Restaurant-Otomasyonu\Restaurant Otomasyonu\Siparis Programı\bin\Debug\Siparis Programı.exe
+C:\Users\mehme\Documents\GitHub\C--Restaurant-Otomasyonu\Restaurant Otomasyonu\Siparis Programı\bin\Debug\Siparis Programı.pdb
+C:\Users\mehme\Documents\GitHub\C--Restaurant-Otomasyonu\Restaurant Otomasyonu\Siparis Programı\obj\Debug\Siparis Programı.csprojAssemblyReference.cache
+C:\Users\mehme\Documents\GitHub\C--Restaurant-Otomasyonu\Restaurant Otomasyonu\Siparis Programı\obj\Debug\Siparis_Programı.Login.resources
+C:\Users\mehme\Documents\GitHub\C--Restaurant-Otomasyonu\Restaurant Otomasyonu\Siparis Programı\obj\Debug\Siparis_Programı.Menuler.resources
+C:\Users\mehme\Documents\GitHub\C--Restaurant-Otomasyonu\Restaurant Otomasyonu\Siparis Programı\obj\Debug\Siparis_Programı.Anasayfa.resources
+C:\Users\mehme\Documents\GitHub\C--Restaurant-Otomasyonu\Restaurant Otomasyonu\Siparis Programı\obj\Debug\Siparis_Programı.Properties.Resources.resources
+C:\Users\mehme\Documents\GitHub\C--Restaurant-Otomasyonu\Restaurant Otomasyonu\Siparis Programı\obj\Debug\Siparis_Programı.Rezervasyon.resources
+C:\Users\mehme\Documents\GitHub\C--Restaurant-Otomasyonu\Restaurant Otomasyonu\Siparis Programı\obj\Debug\Siparis_Programı.SiparisHazirla.resources
+C:\Users\mehme\Documents\GitHub\C--Restaurant-Otomasyonu\Restaurant Otomasyonu\Siparis Programı\obj\Debug\Siparis Programı.csproj.GenerateResource.cache
+C:\Users\mehme\Documents\GitHub\C--Restaurant-Otomasyonu\Restaurant Otomasyonu\Siparis Programı\obj\Debug\Siparis Programı.csproj.CoreCompileInputs.cache
+C:\Users\mehme\Documents\GitHub\C--Restaurant-Otomasyonu\Restaurant Otomasyonu\Siparis Programı\obj\Debug\Siparis Programı.exe
+C:\Users\mehme\Documents\GitHub\C--Restaurant-Otomasyonu\Restaurant Otomasyonu\Siparis Programı\obj\Debug\Siparis Programı.pdb

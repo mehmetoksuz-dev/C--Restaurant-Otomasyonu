@@ -2,6 +2,7 @@
 using System.Collections.Generic;
 using System.ComponentModel;
 using System.Data;
+using System.Data.SqlClient;
 using System.Drawing;
 using System.Linq;
 using System.Text;
@@ -21,7 +22,8 @@ namespace Siparis_Programı
         {
             masaGetir();
             RezGetir();
-            MusteriGetir();
+            MusteriGetir(dataGridMusteriler);
+            SiparisGetir();
         }
         private void button1_Click(object sender, EventArgs e)
         {
@@ -118,6 +120,43 @@ namespace Siparis_Programı
             }
         }
         
+        public void SiparisGetir()
+        {
+            //string srQuery = "Select Siparisler.SiparisId,Musteriler.MusteriAdres, Musteriler.MusteriAd, Musteriler.MusteriSoyad, Siparisler.SiparisGarson from Musteriler LEFT JOIN Siparisler ON Musteriler.MusteriId = Siparisler.MusteriId";
+            try
+            {
+                //string showCstQuery = "select * from AddCustomer";
+                using (SqlConnection connection = new SqlConnection(dbConnection.srConnectionString))
+                {
+                    connection.Open();
+                    SqlCommand cmd = new SqlCommand("Select Siparisler.SiparisId, Siparisler.SiparisSaat, Musteriler.MusteriAdres, Musteriler.MusteriAd, " +
+                        "Musteriler.MusteriSoyad, Siparisler.SiparisTutar,Siparisler.SiparisGarson from Musteriler LEFT JOIN Siparisler" +
+                        " ON Musteriler.MusteriId = Siparisler.MusteriId WHERE Siparisler.SiparisGarson is NOT NULL", connection);
+                    SqlDataReader dtRead = cmd.ExecuteReader();
+                    while (dtRead.Read())
+                    {
+                        ListViewItem addItm = new ListViewItem();
+                        addItm.Text = dtRead["SiparisId"].ToString();
+                        addItm.SubItems.Add(dtRead["SiparisSaat"].ToString());
+                        addItm.SubItems.Add(dtRead["MusteriAd"].ToString());
+                        addItm.SubItems.Add(dtRead["MusteriSoyad"].ToString());
+                        addItm.SubItems.Add(dtRead["SiparisTutar"].ToString());
+                        addItm.SubItems.Add(dtRead["SiparisGarson"].ToString());
+                        addItm.SubItems.Add(dtRead["MusteriAdres"].ToString());
+
+
+                        lstSiparisler.Items.Add(addItm);
+                    }
+                    connection.Close();
+                }
+
+            }
+            catch (Exception E)
+            {
+                MessageBox.Show(E.Message);
+            }
+        }
+
         public void RezGetir()
         {
             string rezQuery = "select RezervasyonId,RezAd,RezSoyAd,RezTelefon,RezTarih,RezMasa from Rezervasyon";
@@ -129,19 +168,20 @@ namespace Siparis_Programı
             }
         }
 
-        public void MusteriGetir()
+        public static void MusteriGetir(DataGridView dtGrd) //Müşterileri çektiğimiz statik fonksiyon
         {
             string musteriQry = "select * from Musteriler";
             DataTable dtMusteri = dbConnection.return_data_set(musteriQry, out string Msg).Tables[0];
             for (int i = 0; i < dtMusteri.Rows.Count; i++)
             {
                 Object[] musteriVerileri = dtMusteri.Rows[i].ItemArray;
-                dataGridMusteriler.Rows.Add(musteriVerileri);
+                dtGrd.Rows.Add(musteriVerileri);
             }
         }
         private void siparisHazırlaToolStripMenuItem_Click(object sender, EventArgs e)
         {
-            MessageBox.Show("test");
+            SiparisHazirla sprs = new SiparisHazirla();
+            sprs.Show();
         }
 
         private void btnMusteriEkle_Click(object sender, EventArgs e)
@@ -313,7 +353,7 @@ namespace Siparis_Programı
             {
                 MessageBox.Show("Müşterinin bilgileri güncellenmiştir.");
                 dataGridMusteriler.Rows.Clear();
-                MusteriGetir();
+                MusteriGetir(dataGridMusteriler);
             }
             else { MessageBox.Show("Bir Hata oluştu"); return; }
         }
@@ -331,9 +371,86 @@ namespace Siparis_Programı
                 MessageBox.Show("Müşterinin rezervasyonu silinmiştir.");
                 dataGridMusteriler.Rows.Clear();
                 HelperClass.ClearTextBoxes(groupBox2.Controls);
-                MusteriGetir();
+                MusteriGetir(dataGridMusteriler);
             }
             else { MessageBox.Show("Bir Hata oluştu"); return; }
+        }
+
+        private void btnYazdir_Click(object sender, EventArgs e)
+        {
+            DialogResult pdr = printDialog1.ShowDialog();
+            if (pdr == DialogResult.OK)
+            {
+                printDocument1.Print();
+            }
+        }
+
+        private void printDocument1_PrintPage(object sender, System.Drawing.Printing.PrintPageEventArgs e)
+        {
+            //Yazı fontumu ve çizgi çizmek için fırçamı ve kalem nesnemi oluşturdum
+            Font myFont = new Font("Calibri", 28);
+            SolidBrush sbrush = new SolidBrush(Color.Black);
+            Pen myPen = new Pen(Color.Black);
+
+
+            //Bu kısımda sipariş formu yazısını ve çizgileri yazdırıyorum
+            e.Graphics.DrawLine(myPen, 120, 120, 750, 120);
+            e.Graphics.DrawLine(myPen, 120, 180, 750, 180);
+            e.Graphics.DrawString("SİPARİŞ FORMU", myFont, sbrush, 200, 120);
+
+            e.Graphics.DrawLine(myPen, 120, 320, 750, 320);
+
+            myFont = new Font("Calibri", 12, FontStyle.Bold);
+            e.Graphics.DrawString("Fiş No", myFont, sbrush, 140, 328);
+            e.Graphics.DrawString("Saat", myFont, sbrush, 240, 328);
+            e.Graphics.DrawString("Adı", myFont, sbrush, 340, 328);
+            e.Graphics.DrawString("Soyadı", myFont, sbrush, 440, 328);
+            e.Graphics.DrawString("Toplam", myFont, sbrush, 640, 328);
+            e.Graphics.DrawString("Garson", myFont, sbrush, 740, 328);
+            e.Graphics.DrawString("Adres(Paket Sipariş)", myFont, sbrush, 840, 328);
+
+            e.Graphics.DrawLine(myPen, 120, 348, 750, 348);
+
+            int y = 360;
+
+            StringFormat myStringFormat = new StringFormat();
+            myStringFormat.Alignment = StringAlignment.Far;
+
+
+            foreach (ListViewItem lvi in lstSiparisler.Items)
+            {
+                e.Graphics.DrawString(lvi.SubItems[0].Text, myFont, sbrush, 160, y, myStringFormat);
+                e.Graphics.DrawString(lvi.Text, myFont, sbrush, 320, y);
+
+                string saat = lvi.SubItems[1].Text.Substring(0, lvi.SubItems[1].Text.Length - 9);
+                e.Graphics.DrawString(saat, myFont, sbrush, 280, y, myStringFormat);
+                e.Graphics.DrawString(lvi.Text, myFont, sbrush, 420, y);
+
+                e.Graphics.DrawString(lvi.SubItems[2].Text, myFont, sbrush, 390, y, myStringFormat);
+                e.Graphics.DrawString(lvi.Text, myFont, sbrush, 520, y);
+
+                e.Graphics.DrawString(lvi.SubItems[3].Text, myFont, sbrush, 480, y, myStringFormat);
+                e.Graphics.DrawString(lvi.Text, myFont, sbrush, 620, y);
+                y += 20;
+
+            }
+
+            e.Graphics.DrawLine(myPen, 120, y, 750, y);
+        }
+
+        private void listView1_SelectedIndexChanged(object sender, EventArgs e)
+        {
+
+        }
+
+        private void tabPage4_Click(object sender, EventArgs e)
+        {
+
+        }
+
+        private void tabPage1_Click(object sender, EventArgs e)
+        {
+
         }
     }
 }
