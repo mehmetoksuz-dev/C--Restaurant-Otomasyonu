@@ -109,5 +109,15 @@ namespace Siparis_Programı
             txtIsım.Text = dtSiparisMusteri.CurrentRow.Cells[1].Value.ToString() + " " + dtSiparisMusteri.CurrentRow.Cells[2].Value.ToString();
 
         }
+        public System.Windows.Forms.TabControl tabControl1;
+
+        private void btnMusteriEkle_Click(object sender, EventArgs e)
+        {
+            using (Menuler frm = new Menuler())
+            {
+                frm.tabControl1.SelectedIndex = 2;
+                frm.ShowDialog();
+            }
+        }
     }
 }

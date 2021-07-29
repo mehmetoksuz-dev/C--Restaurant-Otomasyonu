@@ -242,6 +242,7 @@ namespace Siparis_Programı
             this.btnMusteriEkle.TabIndex = 5;
             this.btnMusteriEkle.Text = "Müşteri Ekle";
             this.btnMusteriEkle.UseVisualStyleBackColor = true;
+            this.btnMusteriEkle.Click += new System.EventHandler(this.btnMusteriEkle_Click);
             // 
             // txtAra
             // 

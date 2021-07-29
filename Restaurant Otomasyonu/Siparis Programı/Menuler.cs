@@ -16,18 +16,25 @@ namespace Siparis_Programı
         public Menuler()
         {
             InitializeComponent();
-            
+
         }
         private void Menuler_Load(object sender, EventArgs e)
         {
+            if (Login.blLoginType == false)
+            {
+                tabControl1.TabPages.Remove(tabPage5);
+                btnAyarlar.Enabled = false;
+                btnAyarlar.Text = "";
+            }
             masaGetir();
             RezGetir();
             MusteriGetir(dataGridMusteriler);
             SiparisGetir();
+            UrunGetir();
         }
         private void button1_Click(object sender, EventArgs e)
         {
-            
+
         }
         public void masaGetir()
         {
@@ -44,7 +51,7 @@ namespace Siparis_Programı
             }
             else { MessageBox.Show("Veri Yok"); return; }
 
-            if (dTblMasaRenk.Rows.Count >0)
+            if (dTblMasaRenk.Rows.Count > 0)
             {
                 //
             }
@@ -56,7 +63,7 @@ namespace Siparis_Programı
             iceriMasa = Convert.ToInt32(masaSayilari[1]);
             bahceMasa = Convert.ToInt32(masaSayilari[0]);
             int x = 40, y = 30, bx = 0;
-            for (int i = 0; i < iceriMasa+1; i++)
+            for (int i = 0; i < iceriMasa + 1; i++)
             {
                 Object[] masaRenk = dTblMasaRenk.Rows[i].ItemArray;
                 y += -20;
@@ -64,12 +71,12 @@ namespace Siparis_Programı
 
                 bx = x;
                 Button btn = new Button();
-                Point btnYer = new Point(y + 5,bx - 50);
+                Point btnYer = new Point(y + 5, bx - 50);
                 btn.Location = btnYer;
                 btn.Width = 100;
                 btn.Height = 60;
                 btn.Name = "btn" + i;
-                btn.Text = "Masa "+(i+1).ToString();
+                btn.Text = "Masa " + (i + 1).ToString();
                 srMasaAdi = masaRenk[1].ToString();
                 srMasaRengi = masaRenk[2].ToString();
                 if (btn.Text == srMasaAdi)
@@ -98,7 +105,7 @@ namespace Siparis_Programı
 
                 y += 130;
 
-                if (i<=bahceMasa-1)
+                if (i <= bahceMasa - 1)
                 {
                     Button btnBahce = new Button();
                     Point BahceBtnYer = new Point(y + 5, bx - 50);
@@ -106,7 +113,7 @@ namespace Siparis_Programı
                     btnBahce.Width = 100;
                     btnBahce.Height = 60;
                     btnBahce.Name = "btn" + i;
-                    btnBahce.Text = "Masa " + (i+1).ToString();
+                    btnBahce.Text = "Masa " + (i + 1).ToString();
                     btnBahce.BackColor = Color.FromArgb(67, 172, 29);
                     btnBahce.ForeColor = Color.White;
                     btnBahce.Font = new System.Drawing.Font("Segoe UI", 14.2F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(162)));
@@ -119,7 +126,7 @@ namespace Siparis_Programı
                 btn.Click += new EventHandler(masaControl);
             }
         }
-        
+
         public void SiparisGetir()
         {
             //string srQuery = "Select Siparisler.SiparisId,Musteriler.MusteriAdres, Musteriler.MusteriAd, Musteriler.MusteriSoyad, Siparisler.SiparisGarson from Musteriler LEFT JOIN Siparisler ON Musteriler.MusteriId = Siparisler.MusteriId";
@@ -157,6 +164,16 @@ namespace Siparis_Programı
             }
         }
 
+        public void UrunGetir()
+        {
+            string rezQuery = "select * from Urunler";
+            DataTable dtUrun = dbConnection.return_data_set(rezQuery, out string Msg).Tables[0];
+            for (int i = 0; i < dtUrun.Rows.Count; i++)
+            {
+                Object[] Urunler = dtUrun.Rows[i].ItemArray;
+                dtUrunler.Rows.Add(Urunler);
+            }
+        }
         public void RezGetir()
         {
             string rezQuery = "select RezervasyonId,RezAd,RezSoyAd,RezTelefon,RezTarih,RezMasa from Rezervasyon";
@@ -186,7 +203,7 @@ namespace Siparis_Programı
 
         private void btnMusteriEkle_Click(object sender, EventArgs e)
         {
-            if (txt_musteriAdi.Text == "" || txt_MusteriSoyad.Text=="" || mskdtxt_MusteriTel.Text == "" || txt_MusteriAdres.Text=="")
+            if (txt_musteriAdi.Text == "" || txt_MusteriSoyad.Text == "" || mskdtxt_MusteriTel.Text == "" || txt_MusteriAdres.Text == "")
             {
                 MessageBox.Show("Lütfen gerekli alanları doldurunuz.");
                 return;
@@ -194,7 +211,7 @@ namespace Siparis_Programı
 
             string srMusteriQuery = "INSERT INTO Musteriler (MusteriAd,MusteriSoyad,MusteriTelefon,MusteriAdres) values (@MusteriAd,@MusteriSoyad,@MusteriTelefon,@MusteriAdres)";
 
-            List<dbConnection.cmdParameterType> lstParam = new List<dbConnection.cmdParameterType> { 
+            List<dbConnection.cmdParameterType> lstParam = new List<dbConnection.cmdParameterType> {
                 new dbConnection.cmdParameterType("@MusteriAd", txt_musteriAdi.Text),
                 new dbConnection.cmdParameterType("@MusteriSoyad", txt_MusteriSoyad.Text),
                 new dbConnection.cmdParameterType("@MusteriTelefon", mskdtxt_MusteriTel.Text),
@@ -205,37 +222,67 @@ namespace Siparis_Programı
             {
                 MessageBox.Show("Musteri Basariyla Kaydedildi!");
             }
-            
+
         }
-       
+
         private void btnMasalar_Click(object sender, EventArgs e)
         {
-            tabControl1.SelectedIndex = 0;
-        } 
+            tabControl1.TabPages.Remove(tabPage1);
+            tabControl1.TabPages.Insert(0, tabPage1);
+            this.tabPage1.Show();
+            tabControl1.TabPages.Remove(tabPage2);
+            tabControl1.TabPages.Remove(tabPage3);
+            tabControl1.TabPages.Remove(tabPage4);
+            tabControl1.TabPages.Remove(tabPage5);
+        }
         private void btnRezervasyonlar_Click(object sender, EventArgs e)
         {
-            tabControl1.SelectedIndex = 1;
+            tabControl1.TabPages.Remove(tabPage2);
+            tabControl1.TabPages.Insert(0,tabPage2);
+            this.tabPage2.Show();
+            tabControl1.TabPages.Remove(tabPage1);
+            tabControl1.TabPages.Remove(tabPage3);
+            tabControl1.TabPages.Remove(tabPage4);
+            tabControl1.TabPages.Remove(tabPage5);
         }
 
         private void btnEkleMusteri_Click(object sender, EventArgs e)
         {
-            tabControl1.SelectedIndex = 2;
+            tabControl1.TabPages.Remove(tabPage3);
+            tabControl1.TabPages.Insert(0, tabPage3);
+            this.tabPage3.Show();
+            tabControl1.TabPages.Remove(tabPage1);
+            tabControl1.TabPages.Remove(tabPage2);
+            tabControl1.TabPages.Remove(tabPage4);
+            tabControl1.TabPages.Remove(tabPage5);
         }
 
         private void btnSiparisler_Click(object sender, EventArgs e)
         {
-            tabControl1.SelectedIndex = 3;
+            tabControl1.TabPages.Remove(tabPage4);
+            tabControl1.TabPages.Insert(0, tabPage4);
+            this.tabPage4.Show();
+            tabControl1.TabPages.Remove(tabPage1);
+            tabControl1.TabPages.Remove(tabPage2);
+            tabControl1.TabPages.Remove(tabPage3);
+            tabControl1.TabPages.Remove(tabPage5);
         }
 
         private void btnAyarlar_Click(object sender, EventArgs e)
         {
-            tabControl1.SelectedIndex = 4;
+            tabControl1.TabPages.Remove(tabPage5);
+            tabControl1.TabPages.Insert(0, tabPage5);
+            this.tabPage5.Show();
+            tabControl1.TabPages.Remove(tabPage1);
+            tabControl1.TabPages.Remove(tabPage2);
+            tabControl1.TabPages.Remove(tabPage3);
+            tabControl1.TabPages.Remove(tabPage4);
         }
 
         private void rezerveEtToolStripMenuItem_Click(object sender, EventArgs e)
         {
-                Rezervasyon rez = new Rezervasyon();
-                rez.Show();
+            Rezervasyon rez = new Rezervasyon();
+            rez.Show();
 
         }
 
@@ -251,7 +298,7 @@ namespace Siparis_Programı
                     new dbConnection.cmdParameterType("@MasaAd", dinamikButton.Text)
                 };
 
-                if (dbConnection.cmd_update_DB(rezQuery,rezParams) > 0)
+                if (dbConnection.cmd_update_DB(rezQuery, rezParams) > 0)
                 {
                     dinamikButton.BackColor = Color.Orange;
                     int rezId;
@@ -265,20 +312,20 @@ namespace Siparis_Programı
                         new dbConnection.cmdParameterType("@RezervasyonId", rezId)
                     };
 
-                    if (dbConnection.cmd_update_DB(srRezMasaQry, lstRezParam)>0)
+                    if (dbConnection.cmd_update_DB(srRezMasaQry, lstRezParam) > 0)
                     {
-                        MessageBox.Show("Müşterinin Rezervasyonu Tamamlandı. Masa : " +dinamikButton.Text);
+                        MessageBox.Show("Müşterinin Rezervasyonu Tamamlandı. Masa : " + dinamikButton.Text);
                         //Rezervasyon.kontrol = 0;
                     }
                 }
-                else { MessageBox.Show("Bir Hata oluştu"); return; }                
-            }   
+                else { MessageBox.Show("Bir Hata oluştu"); return; }
+            }
         }
 
         int id = 0;
         private void dataGridRez_CellDoubleClick(object sender, DataGridViewCellEventArgs e)
         {
-            id = int.Parse(dataGridRez.CurrentRow.Cells[0].Value.ToString()); 
+            id = int.Parse(dataGridRez.CurrentRow.Cells[0].Value.ToString());
             txt_RezervName.Text = dataGridRez.CurrentRow.Cells[1].Value.ToString();
             txtRezervSoyad.Text = dataGridRez.CurrentRow.Cells[2].Value.ToString();
             mskRezTel.Text = dataGridRez.CurrentRow.Cells[3].Value.ToString();
@@ -318,7 +365,7 @@ namespace Siparis_Programı
                 new dbConnection.cmdParameterType("@RezervasyonId", id)
             };
 
-            if (dbConnection.cmd_update_DB(srDeleteRezQry,delPrm) > 0)
+            if (dbConnection.cmd_update_DB(srDeleteRezQry, delPrm) > 0)
             {
                 MessageBox.Show("Müşterinin rezervasyonu silinmiştir.");
                 dataGridRez.Rows.Clear();
@@ -451,6 +498,83 @@ namespace Siparis_Programı
         private void tabPage1_Click(object sender, EventArgs e)
         {
 
+        }
+
+        private void btnUrunekle_Click(object sender, EventArgs e)
+        {
+            if (cmbUrunTuru.SelectedIndex == -1 || txtUrunAdi.Text == "" || txtUrunFiyat.Text == "")
+            {
+                MessageBox.Show("Lütfen gerekli alanları doldurunuz.");
+                return;
+            }
+
+            string srUrunQuery = "INSERT INTO Urunler (UrunKategori,UrunAdi,UrunFiyati) values (@UrunKategori,@UrunAdi,@UrunFiyati)";
+
+            List<dbConnection.cmdParameterType> lstParam = new List<dbConnection.cmdParameterType> {
+                new dbConnection.cmdParameterType("@UrunKategori", cmbUrunTuru.SelectedItem.ToString()),
+                new dbConnection.cmdParameterType("@UrunAdi", txtUrunAdi.Text),
+                new dbConnection.cmdParameterType("@UrunFiyati", txtUrunFiyat.Text)
+            };
+
+            if (dbConnection.cmd_update_DB(srUrunQuery, lstParam) > 0)
+            {
+                dtUrunler.Rows.Clear();
+                MessageBox.Show("Urun Basariyla Kaydedildi!");
+                UrunGetir();
+            }
+        }
+
+        private void btnMasaGuncelle_Click(object sender, EventArgs e)
+        {
+            string updateBahce = "update Ayarlar set BahceMasaSayisi=@BahceMasaSayisi";
+            string updateIceri = "update Ayarlar set IceriMasaSayisi=@IceriMasaSayisi";
+
+            if (cmbMasaKonum.SelectedIndex != -1)
+            {
+                if (cmbMasaKonum.SelectedItem.ToString() == "Bahçe")
+                {
+                    List<dbConnection.cmdParameterType> bahceParam = new List<dbConnection.cmdParameterType>
+                    {
+                        new dbConnection.cmdParameterType("@BahceMasaSayisi", txtMasaAdet.Text)
+                    };
+                    if (dbConnection.cmd_update_DB(updateBahce, bahceParam) > 0)
+                    {
+                        MessageBox.Show("Bahçe masa sayısı güncellendi!");
+                    }
+                }
+                else if (cmbMasaKonum.SelectedItem.ToString() == "İçeri")
+                {
+                    List<dbConnection.cmdParameterType> iceriPrm = new List<dbConnection.cmdParameterType>
+                    {
+                        new dbConnection.cmdParameterType("@IceriMasaSayisi", txtMasaAdet.Text)
+                    };
+                    if (dbConnection.cmd_update_DB(updateIceri, iceriPrm) > 0)
+                    {
+                        MessageBox.Show("İçeri masa sayısı güncellendi!");
+                    }
+                }
+            }
+        }
+
+        private void btnKullaniciEkle_Click(object sender, EventArgs e)
+        {
+            string srUrunQuery = "INSERT INTO Kullanıcılar (KullaniciAdi,Sifre,Rol) values (@KullaniciAdi,@Sifre,@Rol)";
+            if (cmbKullaniciRolu.SelectedIndex == -1)
+            {
+                MessageBox.Show("Lütfen gerekli alanları doldurunuz.");
+                return;
+            }
+
+            List<dbConnection.cmdParameterType> lstParam = new List<dbConnection.cmdParameterType> {
+                new dbConnection.cmdParameterType("@KullaniciAdi", txtKullaniciAdi.Text),
+                new dbConnection.cmdParameterType("@Sifre", txtSifre.Text),
+                new dbConnection.cmdParameterType("@Rol", cmbKullaniciRolu.SelectedItem.ToString())
+            };
+
+            if (dbConnection.cmd_update_DB(srUrunQuery, lstParam) > 0)
+            {
+                MessageBox.Show("Kullanıcı Basariyla Kaydedildi!");
+            }
         }
     }
 }

@@ -124,6 +124,34 @@ namespace Siparis_Programı
             this.button1 = new System.Windows.Forms.Button();
             this.button2 = new System.Windows.Forms.Button();
             this.tabPage5 = new System.Windows.Forms.TabPage();
+            this.grpKullanici = new System.Windows.Forms.GroupBox();
+            this.txtSifre = new System.Windows.Forms.TextBox();
+            this.label31 = new System.Windows.Forms.Label();
+            this.btnKullaniciEkle = new System.Windows.Forms.Button();
+            this.txtKullaniciAdi = new System.Windows.Forms.TextBox();
+            this.label27 = new System.Windows.Forms.Label();
+            this.label30 = new System.Windows.Forms.Label();
+            this.cmbKullaniciRolu = new System.Windows.Forms.ComboBox();
+            this.grpMasalar = new System.Windows.Forms.GroupBox();
+            this.btnMasaGuncelle = new System.Windows.Forms.Button();
+            this.txtMasaAdet = new System.Windows.Forms.TextBox();
+            this.label28 = new System.Windows.Forms.Label();
+            this.label29 = new System.Windows.Forms.Label();
+            this.cmbMasaKonum = new System.Windows.Forms.ComboBox();
+            this.grpUrunler = new System.Windows.Forms.GroupBox();
+            this.dtUrunler = new System.Windows.Forms.DataGridView();
+            this.Column8 = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.Column2 = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.Column6 = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.Column7 = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.btnUrunekle = new System.Windows.Forms.Button();
+            this.btnUrunsil = new System.Windows.Forms.Button();
+            this.txtUrunFiyat = new System.Windows.Forms.TextBox();
+            this.label26 = new System.Windows.Forms.Label();
+            this.txtUrunAdi = new System.Windows.Forms.TextBox();
+            this.label25 = new System.Windows.Forms.Label();
+            this.label24 = new System.Windows.Forms.Label();
+            this.cmbUrunTuru = new System.Windows.Forms.ComboBox();
             this.contextMenuStrip1 = new System.Windows.Forms.ContextMenuStrip(this.components);
             this.siparisHazırlaToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.rezerveEtToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
@@ -142,6 +170,11 @@ namespace Siparis_Programı
             this.groupBox1.SuspendLayout();
             this.tabPage4.SuspendLayout();
             this.groupBox3.SuspendLayout();
+            this.tabPage5.SuspendLayout();
+            this.grpKullanici.SuspendLayout();
+            this.grpMasalar.SuspendLayout();
+            this.grpUrunler.SuspendLayout();
+            ((System.ComponentModel.ISupportInitialize)(this.dtUrunler)).BeginInit();
             this.contextMenuStrip1.SuspendLayout();
             this.SuspendLayout();
             // 
@@ -1129,13 +1162,332 @@ namespace Siparis_Programı
             // 
             // tabPage5
             // 
+            this.tabPage5.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(62)))), ((int)(((byte)(87)))), ((int)(((byte)(104)))));
+            this.tabPage5.Controls.Add(this.grpKullanici);
+            this.tabPage5.Controls.Add(this.grpMasalar);
+            this.tabPage5.Controls.Add(this.grpUrunler);
+            this.tabPage5.ForeColor = System.Drawing.Color.Transparent;
             this.tabPage5.Location = new System.Drawing.Point(4, 25);
             this.tabPage5.Name = "tabPage5";
             this.tabPage5.Padding = new System.Windows.Forms.Padding(3);
             this.tabPage5.Size = new System.Drawing.Size(1674, 921);
             this.tabPage5.TabIndex = 4;
             this.tabPage5.Text = "Ayarlar";
-            this.tabPage5.UseVisualStyleBackColor = true;
+            // 
+            // grpKullanici
+            // 
+            this.grpKullanici.Controls.Add(this.txtSifre);
+            this.grpKullanici.Controls.Add(this.label31);
+            this.grpKullanici.Controls.Add(this.btnKullaniciEkle);
+            this.grpKullanici.Controls.Add(this.txtKullaniciAdi);
+            this.grpKullanici.Controls.Add(this.label27);
+            this.grpKullanici.Controls.Add(this.label30);
+            this.grpKullanici.Controls.Add(this.cmbKullaniciRolu);
+            this.grpKullanici.Font = new System.Drawing.Font("Microsoft Sans Serif", 10F);
+            this.grpKullanici.ForeColor = System.Drawing.Color.Black;
+            this.grpKullanici.Location = new System.Drawing.Point(625, 357);
+            this.grpKullanici.Name = "grpKullanici";
+            this.grpKullanici.Size = new System.Drawing.Size(574, 346);
+            this.grpKullanici.TabIndex = 21;
+            this.grpKullanici.TabStop = false;
+            this.grpKullanici.Text = "Kullanıcı";
+            // 
+            // txtSifre
+            // 
+            this.txtSifre.Font = new System.Drawing.Font("Century Gothic", 7.8F);
+            this.txtSifre.Location = new System.Drawing.Point(144, 177);
+            this.txtSifre.Name = "txtSifre";
+            this.txtSifre.Size = new System.Drawing.Size(358, 23);
+            this.txtSifre.TabIndex = 21;
+            // 
+            // label31
+            // 
+            this.label31.AutoSize = true;
+            this.label31.Font = new System.Drawing.Font("Century Gothic", 7.8F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(162)));
+            this.label31.ForeColor = System.Drawing.Color.White;
+            this.label31.Location = new System.Drawing.Point(93, 180);
+            this.label31.Name = "label31";
+            this.label31.Size = new System.Drawing.Size(36, 17);
+            this.label31.TabIndex = 20;
+            this.label31.Text = "Şifre";
+            // 
+            // btnKullaniciEkle
+            // 
+            this.btnKullaniciEkle.Font = new System.Drawing.Font("Century Gothic", 7.8F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(162)));
+            this.btnKullaniciEkle.ForeColor = System.Drawing.Color.Black;
+            this.btnKullaniciEkle.Image = ((System.Drawing.Image)(resources.GetObject("btnKullaniciEkle.Image")));
+            this.btnKullaniciEkle.ImageAlign = System.Drawing.ContentAlignment.MiddleLeft;
+            this.btnKullaniciEkle.Location = new System.Drawing.Point(213, 245);
+            this.btnKullaniciEkle.Name = "btnKullaniciEkle";
+            this.btnKullaniciEkle.Size = new System.Drawing.Size(205, 55);
+            this.btnKullaniciEkle.TabIndex = 19;
+            this.btnKullaniciEkle.Text = "EKLE";
+            this.btnKullaniciEkle.UseVisualStyleBackColor = true;
+            this.btnKullaniciEkle.Click += new System.EventHandler(this.btnKullaniciEkle_Click);
+            // 
+            // txtKullaniciAdi
+            // 
+            this.txtKullaniciAdi.Font = new System.Drawing.Font("Century Gothic", 7.8F);
+            this.txtKullaniciAdi.Location = new System.Drawing.Point(144, 122);
+            this.txtKullaniciAdi.Name = "txtKullaniciAdi";
+            this.txtKullaniciAdi.Size = new System.Drawing.Size(358, 23);
+            this.txtKullaniciAdi.TabIndex = 15;
+            // 
+            // label27
+            // 
+            this.label27.AutoSize = true;
+            this.label27.Font = new System.Drawing.Font("Century Gothic", 7.8F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(162)));
+            this.label27.ForeColor = System.Drawing.Color.White;
+            this.label27.Location = new System.Drawing.Point(38, 125);
+            this.label27.Name = "label27";
+            this.label27.Size = new System.Drawing.Size(91, 17);
+            this.label27.TabIndex = 14;
+            this.label27.Text = "Kullanıcı Adı";
+            // 
+            // label30
+            // 
+            this.label30.AutoSize = true;
+            this.label30.Font = new System.Drawing.Font("Century Gothic", 7.8F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(162)));
+            this.label30.ForeColor = System.Drawing.Color.White;
+            this.label30.Location = new System.Drawing.Point(31, 72);
+            this.label30.Name = "label30";
+            this.label30.Size = new System.Drawing.Size(98, 17);
+            this.label30.TabIndex = 13;
+            this.label30.Text = "Kullanıcı Rolü";
+            // 
+            // cmbKullaniciRolu
+            // 
+            this.cmbKullaniciRolu.Font = new System.Drawing.Font("Century Gothic", 7.8F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(162)));
+            this.cmbKullaniciRolu.FormattingEnabled = true;
+            this.cmbKullaniciRolu.Items.AddRange(new object[] {
+            "Yönetici",
+            "Garson"});
+            this.cmbKullaniciRolu.Location = new System.Drawing.Point(144, 69);
+            this.cmbKullaniciRolu.Name = "cmbKullaniciRolu";
+            this.cmbKullaniciRolu.Size = new System.Drawing.Size(358, 25);
+            this.cmbKullaniciRolu.TabIndex = 12;
+            // 
+            // grpMasalar
+            // 
+            this.grpMasalar.Controls.Add(this.btnMasaGuncelle);
+            this.grpMasalar.Controls.Add(this.txtMasaAdet);
+            this.grpMasalar.Controls.Add(this.label28);
+            this.grpMasalar.Controls.Add(this.label29);
+            this.grpMasalar.Controls.Add(this.cmbMasaKonum);
+            this.grpMasalar.Font = new System.Drawing.Font("Microsoft Sans Serif", 10F);
+            this.grpMasalar.ForeColor = System.Drawing.Color.Black;
+            this.grpMasalar.Location = new System.Drawing.Point(625, 29);
+            this.grpMasalar.Name = "grpMasalar";
+            this.grpMasalar.Size = new System.Drawing.Size(574, 301);
+            this.grpMasalar.TabIndex = 20;
+            this.grpMasalar.TabStop = false;
+            this.grpMasalar.Text = "Masalar";
+            // 
+            // btnMasaGuncelle
+            // 
+            this.btnMasaGuncelle.Font = new System.Drawing.Font("Century Gothic", 7.8F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(162)));
+            this.btnMasaGuncelle.ForeColor = System.Drawing.Color.Black;
+            this.btnMasaGuncelle.Image = ((System.Drawing.Image)(resources.GetObject("btnMasaGuncelle.Image")));
+            this.btnMasaGuncelle.ImageAlign = System.Drawing.ContentAlignment.MiddleLeft;
+            this.btnMasaGuncelle.Location = new System.Drawing.Point(213, 192);
+            this.btnMasaGuncelle.Name = "btnMasaGuncelle";
+            this.btnMasaGuncelle.Size = new System.Drawing.Size(205, 55);
+            this.btnMasaGuncelle.TabIndex = 19;
+            this.btnMasaGuncelle.Text = "GÜNCELLE";
+            this.btnMasaGuncelle.UseVisualStyleBackColor = true;
+            this.btnMasaGuncelle.Click += new System.EventHandler(this.btnMasaGuncelle_Click);
+            // 
+            // txtMasaAdet
+            // 
+            this.txtMasaAdet.Font = new System.Drawing.Font("Century Gothic", 7.8F);
+            this.txtMasaAdet.Location = new System.Drawing.Point(144, 122);
+            this.txtMasaAdet.Name = "txtMasaAdet";
+            this.txtMasaAdet.Size = new System.Drawing.Size(358, 23);
+            this.txtMasaAdet.TabIndex = 15;
+            // 
+            // label28
+            // 
+            this.label28.AutoSize = true;
+            this.label28.Font = new System.Drawing.Font("Century Gothic", 7.8F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(162)));
+            this.label28.ForeColor = System.Drawing.Color.White;
+            this.label28.Location = new System.Drawing.Point(44, 125);
+            this.label28.Name = "label28";
+            this.label28.Size = new System.Drawing.Size(85, 17);
+            this.label28.TabIndex = 14;
+            this.label28.Text = "Masa Adeti";
+            // 
+            // label29
+            // 
+            this.label29.AutoSize = true;
+            this.label29.Font = new System.Drawing.Font("Century Gothic", 7.8F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(162)));
+            this.label29.ForeColor = System.Drawing.Color.White;
+            this.label29.Location = new System.Drawing.Point(24, 72);
+            this.label29.Name = "label29";
+            this.label29.Size = new System.Drawing.Size(105, 17);
+            this.label29.TabIndex = 13;
+            this.label29.Text = "Masa Konumu";
+            // 
+            // cmbMasaKonum
+            // 
+            this.cmbMasaKonum.Font = new System.Drawing.Font("Century Gothic", 7.8F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(162)));
+            this.cmbMasaKonum.FormattingEnabled = true;
+            this.cmbMasaKonum.Items.AddRange(new object[] {
+            "İçeri",
+            "Bahçe"});
+            this.cmbMasaKonum.Location = new System.Drawing.Point(144, 69);
+            this.cmbMasaKonum.Name = "cmbMasaKonum";
+            this.cmbMasaKonum.Size = new System.Drawing.Size(358, 25);
+            this.cmbMasaKonum.TabIndex = 12;
+            // 
+            // grpUrunler
+            // 
+            this.grpUrunler.Controls.Add(this.dtUrunler);
+            this.grpUrunler.Controls.Add(this.btnUrunekle);
+            this.grpUrunler.Controls.Add(this.btnUrunsil);
+            this.grpUrunler.Controls.Add(this.txtUrunFiyat);
+            this.grpUrunler.Controls.Add(this.label26);
+            this.grpUrunler.Controls.Add(this.txtUrunAdi);
+            this.grpUrunler.Controls.Add(this.label25);
+            this.grpUrunler.Controls.Add(this.label24);
+            this.grpUrunler.Controls.Add(this.cmbUrunTuru);
+            this.grpUrunler.Font = new System.Drawing.Font("Microsoft Sans Serif", 10F);
+            this.grpUrunler.ForeColor = System.Drawing.Color.Black;
+            this.grpUrunler.Location = new System.Drawing.Point(38, 29);
+            this.grpUrunler.Name = "grpUrunler";
+            this.grpUrunler.Size = new System.Drawing.Size(569, 674);
+            this.grpUrunler.TabIndex = 0;
+            this.grpUrunler.TabStop = false;
+            this.grpUrunler.Text = " Ürünler ";
+            // 
+            // dtUrunler
+            // 
+            this.dtUrunler.AutoSizeColumnsMode = System.Windows.Forms.DataGridViewAutoSizeColumnsMode.Fill;
+            this.dtUrunler.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
+            this.dtUrunler.Columns.AddRange(new System.Windows.Forms.DataGridViewColumn[] {
+            this.Column8,
+            this.Column2,
+            this.Column6,
+            this.Column7});
+            this.dtUrunler.Location = new System.Drawing.Point(37, 327);
+            this.dtUrunler.Name = "dtUrunler";
+            this.dtUrunler.RowHeadersWidth = 51;
+            this.dtUrunler.RowTemplate.Height = 24;
+            this.dtUrunler.Size = new System.Drawing.Size(492, 301);
+            this.dtUrunler.TabIndex = 1;
+            // 
+            // Column8
+            // 
+            this.Column8.HeaderText = "No";
+            this.Column8.MinimumWidth = 6;
+            this.Column8.Name = "Column8";
+            // 
+            // Column2
+            // 
+            this.Column2.HeaderText = "Ürün Kategorisi";
+            this.Column2.MinimumWidth = 6;
+            this.Column2.Name = "Column2";
+            // 
+            // Column6
+            // 
+            this.Column6.HeaderText = "Ürün Adı";
+            this.Column6.MinimumWidth = 6;
+            this.Column6.Name = "Column6";
+            // 
+            // Column7
+            // 
+            this.Column7.HeaderText = "Ürün Fiyatı";
+            this.Column7.MinimumWidth = 6;
+            this.Column7.Name = "Column7";
+            // 
+            // btnUrunekle
+            // 
+            this.btnUrunekle.Font = new System.Drawing.Font("Century Gothic", 7.8F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(162)));
+            this.btnUrunekle.ForeColor = System.Drawing.Color.Black;
+            this.btnUrunekle.Image = ((System.Drawing.Image)(resources.GetObject("btnUrunekle.Image")));
+            this.btnUrunekle.ImageAlign = System.Drawing.ContentAlignment.MiddleLeft;
+            this.btnUrunekle.Location = new System.Drawing.Point(297, 246);
+            this.btnUrunekle.Name = "btnUrunekle";
+            this.btnUrunekle.Size = new System.Drawing.Size(205, 55);
+            this.btnUrunekle.TabIndex = 19;
+            this.btnUrunekle.Text = "EKLE";
+            this.btnUrunekle.UseVisualStyleBackColor = true;
+            this.btnUrunekle.Click += new System.EventHandler(this.btnUrunekle_Click);
+            // 
+            // btnUrunsil
+            // 
+            this.btnUrunsil.Font = new System.Drawing.Font("Century Gothic", 7.8F, System.Drawing.FontStyle.Bold);
+            this.btnUrunsil.ForeColor = System.Drawing.Color.Black;
+            this.btnUrunsil.Image = ((System.Drawing.Image)(resources.GetObject("btnUrunsil.Image")));
+            this.btnUrunsil.ImageAlign = System.Drawing.ContentAlignment.MiddleLeft;
+            this.btnUrunsil.Location = new System.Drawing.Point(57, 246);
+            this.btnUrunsil.Name = "btnUrunsil";
+            this.btnUrunsil.Size = new System.Drawing.Size(205, 55);
+            this.btnUrunsil.TabIndex = 18;
+            this.btnUrunsil.Text = "SİL";
+            this.btnUrunsil.UseVisualStyleBackColor = true;
+            // 
+            // txtUrunFiyat
+            // 
+            this.txtUrunFiyat.Font = new System.Drawing.Font("Century Gothic", 7.8F);
+            this.txtUrunFiyat.Location = new System.Drawing.Point(144, 177);
+            this.txtUrunFiyat.Name = "txtUrunFiyat";
+            this.txtUrunFiyat.Size = new System.Drawing.Size(358, 23);
+            this.txtUrunFiyat.TabIndex = 17;
+            // 
+            // label26
+            // 
+            this.label26.AutoSize = true;
+            this.label26.Font = new System.Drawing.Font("Century Gothic", 7.8F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(162)));
+            this.label26.ForeColor = System.Drawing.Color.White;
+            this.label26.Location = new System.Drawing.Point(54, 180);
+            this.label26.Name = "label26";
+            this.label26.Size = new System.Drawing.Size(75, 17);
+            this.label26.TabIndex = 16;
+            this.label26.Text = "Ürün Fiyatı";
+            // 
+            // txtUrunAdi
+            // 
+            this.txtUrunAdi.Font = new System.Drawing.Font("Century Gothic", 7.8F);
+            this.txtUrunAdi.Location = new System.Drawing.Point(144, 122);
+            this.txtUrunAdi.Name = "txtUrunAdi";
+            this.txtUrunAdi.Size = new System.Drawing.Size(358, 23);
+            this.txtUrunAdi.TabIndex = 15;
+            // 
+            // label25
+            // 
+            this.label25.AutoSize = true;
+            this.label25.Font = new System.Drawing.Font("Century Gothic", 7.8F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(162)));
+            this.label25.ForeColor = System.Drawing.Color.White;
+            this.label25.Location = new System.Drawing.Point(66, 125);
+            this.label25.Name = "label25";
+            this.label25.Size = new System.Drawing.Size(63, 17);
+            this.label25.TabIndex = 14;
+            this.label25.Text = "Ürün Adı";
+            // 
+            // label24
+            // 
+            this.label24.AutoSize = true;
+            this.label24.Font = new System.Drawing.Font("Century Gothic", 7.8F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(162)));
+            this.label24.ForeColor = System.Drawing.Color.White;
+            this.label24.Location = new System.Drawing.Point(21, 72);
+            this.label24.Name = "label24";
+            this.label24.Size = new System.Drawing.Size(108, 17);
+            this.label24.TabIndex = 13;
+            this.label24.Text = "Ürün Kategorisi";
+            // 
+            // cmbUrunTuru
+            // 
+            this.cmbUrunTuru.Font = new System.Drawing.Font("Century Gothic", 7.8F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(162)));
+            this.cmbUrunTuru.FormattingEnabled = true;
+            this.cmbUrunTuru.Items.AddRange(new object[] {
+            "Ana Yemek",
+            "Aperatifler",
+            "Tatlılar",
+            "İçecek"});
+            this.cmbUrunTuru.Location = new System.Drawing.Point(144, 69);
+            this.cmbUrunTuru.Name = "cmbUrunTuru";
+            this.cmbUrunTuru.Size = new System.Drawing.Size(358, 25);
+            this.cmbUrunTuru.TabIndex = 12;
             // 
             // contextMenuStrip1
             // 
@@ -1208,6 +1560,14 @@ namespace Siparis_Programı
             this.tabPage4.PerformLayout();
             this.groupBox3.ResumeLayout(false);
             this.groupBox3.PerformLayout();
+            this.tabPage5.ResumeLayout(false);
+            this.grpKullanici.ResumeLayout(false);
+            this.grpKullanici.PerformLayout();
+            this.grpMasalar.ResumeLayout(false);
+            this.grpMasalar.PerformLayout();
+            this.grpUrunler.ResumeLayout(false);
+            this.grpUrunler.PerformLayout();
+            ((System.ComponentModel.ISupportInitialize)(this.dtUrunler)).EndInit();
             this.contextMenuStrip1.ResumeLayout(false);
             this.ResumeLayout(false);
 
@@ -1313,5 +1673,33 @@ namespace Siparis_Programı
         private System.Windows.Forms.ColumnHeader columnHeader7;
         private System.Windows.Forms.ColumnHeader columnHeader6;
         private System.Windows.Forms.Label label22;
+        private System.Windows.Forms.GroupBox grpUrunler;
+        private System.Windows.Forms.TextBox txtUrunFiyat;
+        private System.Windows.Forms.Label label26;
+        private System.Windows.Forms.TextBox txtUrunAdi;
+        private System.Windows.Forms.Label label25;
+        private System.Windows.Forms.Label label24;
+        private System.Windows.Forms.ComboBox cmbUrunTuru;
+        private System.Windows.Forms.Button btnUrunekle;
+        private System.Windows.Forms.Button btnUrunsil;
+        private System.Windows.Forms.DataGridView dtUrunler;
+        private System.Windows.Forms.GroupBox grpKullanici;
+        private System.Windows.Forms.TextBox txtSifre;
+        private System.Windows.Forms.Label label31;
+        private System.Windows.Forms.Button btnKullaniciEkle;
+        private System.Windows.Forms.TextBox txtKullaniciAdi;
+        private System.Windows.Forms.Label label27;
+        private System.Windows.Forms.Label label30;
+        private System.Windows.Forms.ComboBox cmbKullaniciRolu;
+        private System.Windows.Forms.GroupBox grpMasalar;
+        private System.Windows.Forms.Button btnMasaGuncelle;
+        private System.Windows.Forms.TextBox txtMasaAdet;
+        private System.Windows.Forms.Label label28;
+        private System.Windows.Forms.Label label29;
+        private System.Windows.Forms.ComboBox cmbMasaKonum;
+        private System.Windows.Forms.DataGridViewTextBoxColumn Column8;
+        private System.Windows.Forms.DataGridViewTextBoxColumn Column2;
+        private System.Windows.Forms.DataGridViewTextBoxColumn Column6;
+        private System.Windows.Forms.DataGridViewTextBoxColumn Column7;
     }
 }

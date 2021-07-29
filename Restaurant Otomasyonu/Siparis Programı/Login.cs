@@ -55,12 +55,6 @@ namespace Siparis_Programı
             }
         }
 
-        private void button1_Click(object sender, EventArgs e)
-        {
-            this.Hide();
-            Anasayfa menuForm = new Anasayfa();
-            menuForm.Show();
-        }
 
         private void txt_kAdi_TextChanged(object sender, EventArgs e)
         {
@@ -75,6 +69,48 @@ namespace Siparis_Programı
         private void txt_Sifre_TextChanged(object sender, EventArgs e)
         {
             txt_Sifre.BorderStyle = BorderStyle.None;
+        }
+
+        Object[] user;
+        public static bool blLoginType = false;
+        private void btn_Login_Click(object sender, EventArgs e)
+        {
+            string passCheckQuery = "select * from Kullanıcılar where KullaniciAdi=@KullaniciAdi AND Sifre=@Sifre";
+            try
+            {
+                List<dbConnection.cmdParameterType> loginParams = new List<dbConnection.cmdParameterType> {
+                    new dbConnection.cmdParameterType("@KullaniciAdi",txt_kAdi.Text),
+                    new dbConnection.cmdParameterType("@Sifre",txt_Sifre.Text)
+                };
+
+                user = dbConnection.cmd_Select_DB(passCheckQuery, loginParams).Rows[0].ItemArray;
+            }
+            catch (Exception E)
+            {
+                MessageBox.Show("Kullanıcı Bulunamadı.");
+                return;
+            }
+            string name = user[1].ToString();
+            string pass = user[2].ToString();
+            string rol = user[3].ToString();
+
+            if (txt_kAdi.Text == name && txt_Sifre.Text == pass) //Id Pw kontrolü
+            {
+                if (Convert.ToInt32(rol) == 1) //admin girişi (tam erişim)
+                {
+                    blLoginType = true;
+                    Menuler adminMenu = new Menuler();
+                    adminMenu.Show();
+                    this.Hide();
+                }
+                else if(Convert.ToInt32(rol) == 2) //garson girişi (kısıtlı yetki)
+                {
+                    blLoginType = false;
+                    Menuler garsonMenu = new Menuler();
+                    garsonMenu.Show();
+                }
+            }
+
         }
     }
 }
